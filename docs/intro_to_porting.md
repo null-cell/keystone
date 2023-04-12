@@ -70,7 +70,8 @@ FeatureBitset is a class for storing features of an architecture. Instead of hav
 
 ## RISCV folder - llvm/lib/Target/RISCV
 This is the "meat" of the implementation, so I will explain each folder and file separately. To aquire the base files from llvm (in my case llvm v9.0.1), one has to download the llvm release and build it, then copy the llvm/lib/Target/RISCV folder into the same of Keystone, then go to the llvm v9.0.1's build/lib/Target/RISCV and copy *.inc files to llvm/lib/Target/RISCV folder of Keystone.
->  A note when building llvm v9.0.1 specifically, `#include <limits>` is missing in `file` and thus the build errors out. Add it to the top of the file to get llvm v9.0.1 to build correctly.
+
+>  A note when building llvm v9.0.1 specifically, `#include <limits>` is missing in `llvm/utils/benchmark/src/benchmark_register.h` and thus the build errors out. Add it to the top of the file to get llvm v9.0.1 to build correctly.
 
 The \*.inc files are created from table description (\*.td) files, which describe everything about an ISA, from instruction syntax to operand restrictions. Using the TableGen tool, the default llvm build creates these files for us. This way we do not have to use the tool itself and configure exactly where the dependencies are. The resulting \*.inc files are written in C and should generally not be altered, however since Keystone keeps compilation times in mind, these files need to be pruned to minimal amount of lines, deleting any unused code. 
 
@@ -232,7 +233,7 @@ DESTDIR = /
 ```
 
 ## Build the project
-All that's left is to build and run Keystone. Follow the instructions in `keystone/docs/COMPILE.md` to build the project, then test it. For testing Keystone and its python bindings, there is a documentation page at [TODO: insert link](#)
+All that's left is to build and run Keystone. Follow the instructions in `keystone/docs/COMPILE.md` to build the project, then test it. For testing Keystone and its python bindings, there is a documentation page at [https://gitlab.secura.com/interns/keystone-riscv-testing](https://gitlab.secura.com/interns/keystone-riscv-testing)
 
 
 
