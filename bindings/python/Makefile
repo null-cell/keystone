@@ -5,6 +5,8 @@ OBJDIR = ./build
 else
 OBJDIR = $(abspath $(BUILDDIR))/obj/bindings/python
 endif
+
+DESTDIR = /
  
 .PHONY: gen_const install install3 clean
 
@@ -16,7 +18,7 @@ install:
 	rm -rf prebuilt/win64/keystone.dll
 	rm -rf prebuilt/win32/keystone.dll
 	if test -n "${DESTDIR}"; then \
-		python setup.py build -b $(OBJDIR) install --root="${DESTDIR}"; \
+		python3.10 setup.py build -b $(OBJDIR) install --root="${DESTDIR}"; \
 	else \
 		python setup.py build -b $(OBJDIR) install; \
 	fi
