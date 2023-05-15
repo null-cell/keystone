@@ -233,7 +233,7 @@ DESTDIR = /
 ```
 
 ## Build the project
-All that's left is to build and run Keystone. Follow the instructions in `keystone/docs/COMPILE.md` to build the project, then test it. For testing Keystone and its python bindings, there is a documentation page at [https://gitlab.secura.com/interns/keystone-riscv-testing](https://gitlab.secura.com/interns/keystone-riscv-testing)
+All that's left is to build and run Keystone. Follow the instructions in `keystone/docs/COMPILE.md` to build the project, then test it. For testing Keystone and its python bindings, there is a documentation page at [https://github.com/null-cell/keystone-riscv-testing](https://github.com/null-cell/keystone-riscv-testing)
 
 
 
